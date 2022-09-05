@@ -1,22 +1,20 @@
-class PascalTriangle :
+# Python program to find sum of all elements
+# upto nth row in Pascal triangle.
 
-	def sumPascalRow(self, n) :
-		if (n <= 30) :
-			return
+# Function to find sum of all elements
+# upto nth row.
+def calculateSum(n) :
 		
-		print("\n Row ", n ," ")
-
-		sum = (1 << n)
-		print(" Sum : ", sum ," ")
+	# Initialize sum with 0
+	sum = 0
 	
+	# Loop to calculate power of 2
+	# upto n and add them
+	for row in range(n):
+		sum = sum + (1 << row)
 
-def main() :
-	task = PascalTriangle()
-
-	task.sumPascalRow(5)
-
-	task.sumPascalRow(2)
-
-	task.sumPascalRow(7)
-
-if __name__ == "__main__": main()
+	return sum
+	
+# Driver code
+n = 10
+print("Sum of all elements:", calculateSum(n))
